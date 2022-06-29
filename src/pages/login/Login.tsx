@@ -13,11 +13,11 @@ function Login() {
             <Grid alignItems='center' xs={6}>
                 <Box paddingX={20}>
                     <form>
-                        <Typography variant='h3' gutterBottom color='textPrimary' component='h3' align='center' style={{fontWeight: 'bold'}}>Entrar</Typography>
+                        <Typography variant='h3' gutterBottom color='textPrimary' component='h3' align="center" className="textos1">Entrar</Typography>
                         <TextField id='usuario' label='usuário' variant='outlined' name='usuario' margin='normal' fullWidth />
                         <TextField id='senha' label='senha' variant='outlined' name='senha' margin='normal' type='password'fullWidth />
                         <Box marginTop={2} textAlign='center'>
-                            <Link to='/home' className='text-decorator-none'>
+                            <Link to='/home' className='text-decoration-none'>
                                 <Button type='submit' variant='contained' color='primary'>
                                     Logar
                                 </Button>
@@ -28,14 +28,11 @@ function Login() {
                         <Box marginRight={1}>
                             <Typography variant='subtitle1' gutterBottom align='center'>Não tem uma conta?</Typography>
                         </Box>
-                            <Typography variant='subtitle1' gutterBottom align='center' style={{fontWeight: 'bold'}}>Cadastre-se</Typography>
+                            <Typography variant='subtitle1' gutterBottom align='center' className="textos1">Cadastre-se</Typography>
                     </Box>
                 </Box>
             </Grid>
-            <Grid xs={6} style={{
-                backgroundImage: `url(https://cdn.w600.comps.canstockphoto.com.br/online-pessoas-social-conectando-desenho_csp55527792.jpg)`,
-                backgroundRepeat: 'no-repeat', width: '100vh', minHeight: '100vh', backgroundSize: 'cover', backgroundPosition: 'center'
-            }}>
+            <Grid xs={6} className="imagem">
 
             </Grid>
         </Grid>
