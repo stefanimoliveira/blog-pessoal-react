@@ -1,8 +1,8 @@
 
-import React, {ChangeEvent, useState} from "react";
+import React, {ChangeEvent, useState, useEffect} from "react";
 import { Box } from "@mui/material";
 import {Grid, TextField, Typography, Button} from "@material-ui/core";
-import { Link, useNavigate} from "react-router-dom";
+import { Link, Navigate, useNavigate} from "react-router-dom";
 import useLocalStorage from "react-use-localstorage";
 import { api } from "../../services/Service";
 import "./Login.css";
@@ -11,7 +11,7 @@ import UserLogin from "../../models/UserLogin";
 
 function Login() {
 
-    let history = useNavigate();
+    let navigate = useNavigate();
     const [token, setToken]= useLocalStorage("token");
     
     const[userLogin, setUserLogin]=useState<UserLogin>(
@@ -42,6 +42,12 @@ function Login() {
         alert("Dados inconsistentes. Erro ao logar!");
        }
     }
+
+    useEffect(()=>{
+        if(token != ""){
+            navigate('/home')
+        }
+    }, [token])
 
     return (
         <Grid container direction='row' justifyContent='center' alignItems='center'>
