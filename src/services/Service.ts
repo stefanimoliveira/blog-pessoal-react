@@ -36,6 +36,6 @@ export const put = async(url: any, dados: any, setDado: any, header: any) => {
 }
 
 export const deleteId = async(url: any, header: any) => {
-    await api.put(url, header)
+    await api.delete(url, header)
     
 }
