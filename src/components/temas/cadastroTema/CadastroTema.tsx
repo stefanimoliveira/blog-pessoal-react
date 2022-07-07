@@ -25,7 +25,7 @@ function CadastroTema() {
     }, [token])
 
     useEffect(() => {
-        if (id != undefined) {
+        if (id !== undefined) {
             findById(id)
         }
     }, [id])
@@ -45,8 +45,8 @@ function CadastroTema() {
         })
     }
 
-    async function onSubmit(e: ChangeEvent<HTMLInputElement>) {
-        if (id != undefined) {
+    async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
+        if (id !== undefined) {
             console.log(`tema`, tema, setTema)
             put(`tema`, tema, setTema, {
                 headers: {
@@ -71,7 +71,7 @@ function CadastroTema() {
 
     return (
         <Container maxWidth="sm" className="topo">
-            <form > 
+            <form onSubmit={onSubmit}> 
                 <Typography variant="h3" color="textSecondary" component="h1" align="center" >Formulário de cadastro tema</Typography>
                 <TextField value={tema.descricao} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedTema(e)} id="descricao" label="descricao" variant="outlined" name="descricao" margin="normal" fullWidth />
                 <Button type="submit" variant="contained" color="primary">
