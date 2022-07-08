@@ -100,7 +100,7 @@ function CadastroPost() {
     }
 
     function back() {
-        navigate('/postagens')
+        navigate('/posts')
     }
 
     return (
